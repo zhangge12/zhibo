@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    body{
+        background-image: url(img/5.jpg)
+    }
+     caption{
+         font: bold 36px/60px "宋体";
+     }
+    .t1{
+        display: block;
+        /* float: left;
+        margin-left: 100px; */
+    } 
+    .t2{
+        display: block;
+        /* float: left;
+        margin-left: 50px; */
+    } 
+    a{
+        color: red;
+        text-decoration: none;
+    }
+    div{
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: cornflowerblue;
+        float: right;
+        margin-top: 80px;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+    div a{
+        display: block;
+        width: 80px;
+        height: 40px;
+        color: antiquewhite;
+    }
+    #order,#time,#title{
+        width:150px;
+        height: 40px;
+        text-align: center;
+        
+    }
+    td{
+        text-align: center;
+    }
+    </style>  
+</head>
+<body>
+    <form action="#">
+        姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="xm" value="请输入你的姓名"><br>
+        部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门：<input type="text" name="bm" value="请输入你的部门"><br>
+        审核结果：<input type="text" value="" name="jg">
+    </form>
+    <form action="#"  onsubmit="return false"  name="myform" >
+    <table border="1" width="1200" background="img\3.jpg" cellpadding="10">
+        <caption>个人信息查询表</caption>
+        <tr>
+            <th>姓名</td>
+            <th>部门</td>
+            <th>审核</td>
+            <th colspan="3">个人信息修改</td>
+        </tr>
+        <tr>
+            <td align="center"><form> <input type="text" required id="order" ></form></td>
+            <td align="center"><form> <input type="text" required id="time" ></form></td>
+            <td align="center"><form> <input type="text" required id="title" ></form></td>
+            <td align="center"><span class="t1"><a href="#" onclick="cuanzhi()" id="submit">添加</a></span></td>
+            <!-- <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td> -->
+        </tr>
+    </table></form>
+    <table border="1" width="1200" background="img\3.jpg" cellpadding="10" id="table">
+        <caption>个人信息查询表</caption>
+        <tr id="one">
+            <th>姓名</td>
+            <th>部门</td>
+            <th>审核</td>
+            <th colspan="3">个人信息修改</td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#" onclick="cuanzhi()" id="submit">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>   
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+    </table>
+    <div><a href="right功能栏.html">返回</a></div>
+    <script type="text/javascript">
+        var oNum = document.getElementsByTagName('a');
+        var obm  = document.getElementsByTagName('tr');
+        function deletes(){
+			alert("确定删除日志吗？");
+		   a=prompt("请再次确认，并且输入密码：");
+		   if( a=="123456"){
+                obm[1].parentNode.removeChild(obm[1]);
+			   }
+			   else {
+				   alert("密码输入错误");
+				   }
+		}
+        var data = document.getElementById("submit"); //点击提交时，触发
+		var addTable = document.getElementById("table"); //获取父标签，添加表格
+        function cuanzhi(){
+			var order1 = document.getElementById("order").value;
+			var time1 = document.getElementById("time").value;
+			var title1 = document.getElementById("title").value;
+			addTable.innerHTML += "<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>"; //添加一行列表
+			var oTd = document.getElementsByTagName("td");
+			var len = oTd.length;
+			alert("日志上传成功！");
+			//将信息填入表格
+			oTd[len-1].innerText = "通过";//获取时间信息
+			oTd[len-2].innerText = "操作员";
+            oTd[len-3].innerText = "上交";
+			oTd[len-4].innerText =title1;
+			oTd[len-5].innerText = time1;
+			oTd[len-6].innerText = order1;
+			}
+    </script>
+</body>
+</html>

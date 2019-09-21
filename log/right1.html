@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    body{
+        background-image: url(img/5.jpg)
+    }
+     caption{
+         font: bold 36px/60px "宋体";
+     }
+    .t1{
+        display: block;
+        /* float: left;
+        margin-left: 100px; */
+    } 
+    .t2{
+        display: block;
+        /* float: left;
+        margin-left: 50px; */
+    } 
+    a{
+        color: red;
+        text-decoration: none;
+    }
+    div{
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: cornflowerblue;
+        float: right;
+        margin-top: 80px;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+    div a{
+        display: block;
+        width: 80px;
+        height: 40px;
+        color: antiquewhite;
+    }
+    #order,#time,#title{
+        width:150px;
+        height: 40px;
+        text-align: center;
+        
+    }
+    td{
+        text-align: center;
+    }
+    </style>  
+</head>
+<body>
+    <form action="#"  onsubmit="return false"  name="myform" >
+    <table border="1" width="1200" background="img\3.jpg" cellpadding="10">
+        <caption>个人信息查询表</caption>
+        <tr>
+            <th>编号</th>
+            <th>姓名</td>
+            <th>部门</td>
+            <th>审核</td>
+            <th colspan="2">个人信息修改</td>
+        </tr>
+        <tr>
+            <td align="center"> <input type="text" name="user"></td>
+            <td align="center"><input type="text" name="age"></td>
+            <td align="center"> <input type="text" name="sex"></td>
+            <td align="center"> <input type="text"name="bumen"></td>
+            <td align="center"><span class="t1"><a href="#" onclick="getMessage()" id="submit">添加</a></span></td>
+            <!-- <td align="center"><input type="rest" value="rest form"></td> -->
+            <!-- <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td> -->
+        </tr>
+    </table></form>
+    <table border="1" width="1200" background="img\3.jpg" cellpadding="10" id="tab">
+        <caption>个人信息查询表</caption>
+        <tr id="one">
+            <th>编号</th>
+            <th>姓名</td>
+            <th>部门</td>
+            <th>审核</td>
+            <th colspan="2">个人信息修改</td>
+        </tr>
+        <tr id="one">
+            <td align="center">001</td>
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>   
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+        <tr id="one">
+            <td align="center">张歌</td>
+            <td align="center">人力资源部</td>
+            <td align="center">审核中...</td>
+            <td align="center"><span class="t1"><a href="#">添加</a></span></td>
+            <td align="center"><san class="t2"><a href="#" onClick="deletes()">删除</a></san></td>
+            <td align="center"><san class="t2"><a href="#">修改</a></san></td>
+        </tr>
+    </table>
+    <div><a href="right.html">返回</a></div>
+    <script>
+            var tab = document.getElementById('tab');
+            var user = document.myform.user;
+            var age = document.myform.age;
+            var sex = document.myform.sex;
+            var bumen = document.myform.bumen;
+            function getMessage(){
+                    //创建行
+                var tr = tab.insertRow(tab.rows.length);
+                tr.insertCell(0).innerHTML = user.value;
+                tr.insertCell(1).innerHTML = age.value;
+                tr.insertCell(2).innerHTML = sex.value;
+                tr.insertCell(3).innerHTML = bumen.value;
+                tr.insertCell(4).innerHTML = '<button onclick="del(this)">删除</button>';
+                tr.insertCell(5).innerHTML = '<button onclick="del(this)">修改</button>';
+            }
+            function del(n){
+                var index = n.parentNode.parentNode.rowIndex;
+                console.log(index);
+                tab.deleteRow(index);
+            }
+        </script>
+</body>
+</html>
